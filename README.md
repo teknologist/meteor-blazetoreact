@@ -1,18 +1,15 @@
 # BlazeToReact
 Transform a Blaze template into a React.js component while keeping the reactivity
 
-# Install
+## Install
 `meteor add thereactivestack:blazetoreact`
 
-# Usage
-```html
-<template name="hello">
-  This is whatever template: {{message}}
-  Blaze keeps being reactive from React values: {{count}}
-</template>
+## Usage
+```javascript
+const Component = BlazeToReact('template-name');
 ```
 
-# Example with a package (accounts-ui)
+## Example for any package (accounts-ui)
 ```javascript
 const LoginButtons = BlazeToReact('loginButtons');
 
@@ -28,7 +25,14 @@ App = React.createClass({
 })
 ```
 
-# Example with your own template
+## Example with your own template
+```html
+<template name="hello">
+  This is whatever template: {{message}}
+  Blaze keeps being reactive from React values: {{count}}
+</template>
+```
+
 ```javascript
 const Hello = BlazeToReact('hello');
 

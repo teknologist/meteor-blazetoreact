@@ -9,6 +9,12 @@ Transform a Blaze template into a React.js component while keeping the reactivit
 const Component = BlazeToReact('template-name');
 ```
 
+```javascript
+const Component = BlazeToReact('template-name', {
+  container: <div className="my-container" />
+});
+```
+
 ## Example for any package (accounts-ui)
 ```javascript
 const LoginButtons = BlazeToReact('loginButtons');

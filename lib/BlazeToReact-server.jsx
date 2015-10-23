@@ -7,6 +7,18 @@ const DummyElement = React.createClass({
   }
 });
 
-BlazeToReact = function() {
-  return DummyElement;
+BlazeToReact = function(name, options) {
+  if (!options) {
+    options = {};
+  }
+
+  if (!options.container) {
+    options.container = <span />;
+  }
+
+  return React.createClass({
+    render() {
+      return options.container;
+    }
+  });
 };

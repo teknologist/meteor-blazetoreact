@@ -1,4 +1,12 @@
-BlazeToReact = function(name) {
+BlazeToReact = function(name, options) {
+  if (!options) {
+    options = {};
+  }
+  
+  if (!options.container) {
+    options.container = <span />;
+  }
+
   return React.createClass({
     shouldComponentUpdate() {
       // Blaze has the full control once started
@@ -20,7 +28,7 @@ BlazeToReact = function(name) {
     },
 
     render() {
-      return <span />;
+      return options.container;
     }
   });
 };

@@ -2,7 +2,7 @@ BlazeToReact = function(name, options) {
   if (!options) {
     options = {};
   }
-  
+
   if (!options.container) {
     options.container = <span />;
   }
@@ -11,11 +11,6 @@ BlazeToReact = function(name, options) {
     shouldComponentUpdate() {
       // Blaze has the full control once started
       return false;
-    },
-
-    componentDidMount() {
-      let el = React.findDOMNode(this);
-      this.blazeView = Blaze.renderWithData(Template[name], this.props, el);
     },
 
     componentWillUnmount() {
@@ -28,7 +23,11 @@ BlazeToReact = function(name, options) {
     },
 
     render() {
-      return options.container;
+      return React.cloneElement(options.container, {
+        ref: function(el) {
+          this.blazeView = Blaze.renderWithData(Template[name], this.props, el);
+        }.bind(this)
+      });
     }
   });
 };

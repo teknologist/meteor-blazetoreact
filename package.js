@@ -7,7 +7,7 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-  api.use(['react@0.1.0']);
+  api.use(['react@0.14.1']);
   api.use(['blaze@2.1.0'], 'client');
 
   api.add_files(['lib/BlazeToReact-client.jsx'], ['client']);

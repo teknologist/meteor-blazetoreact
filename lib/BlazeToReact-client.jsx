@@ -25,7 +25,9 @@ BlazeToReact = function(name, options) {
     render() {
       return React.cloneElement(options.container, {
         ref: function(el) {
-          this.blazeView = Blaze.renderWithData(Template[name], this.props, el);
+          if (el && !this.blazeView) {
+            this.blazeView = Blaze.renderWithData(Template[name], this.props, el);
+          }
         }.bind(this)
       });
     }

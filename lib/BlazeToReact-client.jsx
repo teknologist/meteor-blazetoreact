@@ -18,8 +18,7 @@ BlazeToReact = function(name, options) {
     },
 
     componentWillReceiveProps(props) {
-      _.extend(this.blazeView.dataVar.curValue, props);
-      this.blazeView.dataVar.dep.changed();
+      this.blazeView.dataVar.set(props);
     },
 
     render() {

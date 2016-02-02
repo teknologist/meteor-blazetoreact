@@ -1,9 +1,15 @@
 Package.describe({
   name: 'thereactivestack:blazetoreact',
-  version: '0.1.5',
+  version: '0.1.6',
   summary: 'Transform a Blaze template into a React.js component while keeping the reactivity',
-  git: 'https://github.com/thereactivestack/meteor-blazetoreact.git',
+  git: 'https://github.com/teknologist/meteor-blazetoreact.git',
   documentation: 'README.md'
+});
+
+
+Npm.depends({
+  "react": "0.14.7",
+  "react-dom": "0.14.7"
 });
 
 Package.onUse(function(api) {
